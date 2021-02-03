@@ -1,0 +1,38 @@
+server:
+  port: 8011
+  servlet:
+    context-path: /Act
+
+spring:
+  autoconfigure:
+    exclude:
+      - org.activiti.spring.boot.SecurityAutoConfiguration
+  datasource:
+    url: jdbc:mysql://localhost:3306/act5?characterEncoding=UTF-8&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=Hongkong&nullCatalogMeansCurrent=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    serialization:
+      write_dates_as_timestamps: false
+#    default-property-inclusion: non_null
+  activiti:
+    database-schema-update: false
+    check-process-definitions: false
+    process-definition-location-prefix: classpath:/processes/
+    history-level: full
+  jpa:
+    show-sql: true
+
+mybatis-plus: #下划线转驼峰关闭
+  configuration:
+    map-underscore-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    call-setters-on-nulls: true
+
+logging:
+  level:
+    org.activiti.engine.impl.persistence.entity: info
+
