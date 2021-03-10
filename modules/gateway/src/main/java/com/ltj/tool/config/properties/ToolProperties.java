@@ -38,7 +38,7 @@ public class ToolProperties {
     private boolean authEnabled = true;
 
     /**
-     * Halo startup mode.
+     * Tool startup mode.
      */
     private Mode mode = Mode.PRODUCTION;
 
@@ -50,17 +50,17 @@ public class ToolProperties {
     /**
      * Work directory.
      */
-    private String workDir = ensureSuffix(USER_HOME, FILE_SEPARATOR) + ".halo" + FILE_SEPARATOR;
+    private String workDir = ensureSuffix(USER_HOME, FILE_SEPARATOR) + ".tool" + FILE_SEPARATOR;
 
     /**
-     * Halo backup directory.(Not recommended to modify this config);
+     * Tool backup directory.(Not recommended to modify this config);
      */
-    private String backupDir = ensureSuffix(TEMP_DIR, FILE_SEPARATOR) + "halo-backup" + FILE_SEPARATOR;
+    private String backupDir = ensureSuffix(TEMP_DIR, FILE_SEPARATOR) + "tool-backup" + FILE_SEPARATOR;
 
     /**
-     * Halo data export directory.
+     * Tool data export directory.
      */
-    private String dataExportDir = ensureSuffix(TEMP_DIR, FILE_SEPARATOR) + "halo-data-export" + FILE_SEPARATOR;
+    private String dataExportDir = ensureSuffix(TEMP_DIR, FILE_SEPARATOR) + "tool-data-export" + FILE_SEPARATOR;
 
     /**
      * Upload prefix.

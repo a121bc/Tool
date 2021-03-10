@@ -53,7 +53,7 @@ public class StaticStorageServiceImpl implements StaticStorageService, Applicati
 
     @Override
     public List<StaticFile> listStaticFolder() {
-        return null;
+        return listStaticFileTree(staticDir);
     }
 
     @Nullable
