@@ -29,3 +29,4 @@ tool:
   mode: demo
   workDir: ${user.home}/tool-demo/
   cache: memory
+

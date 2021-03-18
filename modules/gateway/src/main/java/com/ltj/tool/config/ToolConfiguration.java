@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ltj.tool.cache.AbstractStringCacheStore;
 import com.ltj.tool.cache.InMemoryCacheStore;
 import com.ltj.tool.cache.LevelCacheStore;
+import com.ltj.tool.config.properties.KaoQinTongProperties;
 import com.ltj.tool.config.properties.ToolProperties;
 import com.ltj.tool.utils.HttpClientUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -30,13 +31,15 @@ import java.security.NoSuchAlgorithmException;
 @Slf4j
 @EnableAsync
 @Configuration(proxyBeanMethods = false)
-@EnableConfigurationProperties(ToolProperties.class)
+@EnableConfigurationProperties({ToolProperties.class, KaoQinTongProperties.class})
 public class ToolConfiguration {
 
     private ToolProperties toolProperties;
+    private KaoQinTongProperties kaoQinTongProperties;
 
-    public ToolConfiguration(ToolProperties toolProperties) {
+    public ToolConfiguration(ToolProperties toolProperties, KaoQinTongProperties kaoQinTongProperties) {
         this.toolProperties = toolProperties;
+        this.kaoQinTongProperties = kaoQinTongProperties;
     }
 
     @Bean
