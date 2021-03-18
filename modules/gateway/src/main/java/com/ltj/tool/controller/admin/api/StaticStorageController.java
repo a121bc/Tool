@@ -1,5 +1,6 @@
 package com.ltj.tool.controller.admin.api;
 
+import com.ltj.tool.cache.lock.CacheLock;
 import com.ltj.tool.model.params.StaticContentParam;
 import com.ltj.tool.model.support.StaticFile;
 import com.ltj.tool.service.StaticStorageService;
@@ -15,7 +16,7 @@ import java.util.List;
  * @date 2021-03-09 10:06
  */
 @RestController
-@RequestMapping("/api/admin/statics")
+@RequestMapping(value = "/api/admin/statics", produces = "application/json")
 public class StaticStorageController {
 
     private final StaticStorageService staticStorageService;
@@ -25,6 +26,7 @@ public class StaticStorageController {
     }
 
     @GetMapping
+    @CacheLock(autoDelete = false)
     public List<StaticFile> list() {
         return staticStorageService.listStaticFolder();
     }

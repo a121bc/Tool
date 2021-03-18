@@ -35,11 +35,9 @@ import java.security.NoSuchAlgorithmException;
 public class ToolConfiguration {
 
     private ToolProperties toolProperties;
-    private KaoQinTongProperties kaoQinTongProperties;
 
-    public ToolConfiguration(ToolProperties toolProperties, KaoQinTongProperties kaoQinTongProperties) {
+    public ToolConfiguration(ToolProperties toolProperties) {
         this.toolProperties = toolProperties;
-        this.kaoQinTongProperties = kaoQinTongProperties;
     }
 
     @Bean

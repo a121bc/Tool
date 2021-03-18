@@ -30,3 +30,4 @@ tool:
   workDir: ${user.home}/tool-demo/
   cache: memory
 
+debug: true
